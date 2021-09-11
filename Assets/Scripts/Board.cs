@@ -26,14 +26,27 @@ public class Board : MonoBehaviour
         {
             for(int i = 0; i < boardWidth; i += 1)
             {
-                placeBoardSquare(i * boardSquareSpacing, j * boardSquareSpacing);
+                //placeBoardSquare((i - boardWidth/2) * boardSquareSpacing, (j - boardHeight/2) * boardSquareSpacing);
+                placeBoardSquare(i,j);
             }
         }
+    }
+    private void placeBoardSquare(int x, int y)
+    {
+        BoardSquare newSquare = Instantiate(BoardSquarePrefab, transform).GetComponent<BoardSquare>();
+        newSquare.gameObject.name += " " + x + "," + y;
+        newSquare.PlaceBoardSquare((x - boardWidth/2)*boardSquareSpacing, (y - boardHeight/2)*boardSquareSpacing);
     }
 
     private void placeBoardSquare(float x, float y)
     {
         BoardSquare newSquare = Instantiate(BoardSquarePrefab, transform).GetComponent<BoardSquare>();
-        newSquare.PlaceBoardSquare(x, y);
+        newSquare.gameObject.name +=  " " + x + "," + y;
+        newSquare.PlaceBoardSquare(x,y);
+    }
+
+    public void squareClicked(BoardSquare square)
+    {
+        Debug.Log(square.name);
     }
 }

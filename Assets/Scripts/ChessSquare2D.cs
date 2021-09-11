@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ChessSquare2D : BoardSquare
 {
+    public Color Square1, Square2;
     public override void PlaceBoardSquare(float x, float y)
     {
         Vector2 pos = new Vector2(x, y);
-        transform.position = pos;
+        transform.localPosition = pos;
+
+    
     }
 
     // Start is called before the first frame update
