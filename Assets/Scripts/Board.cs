@@ -8,6 +8,8 @@ public class Board : MonoBehaviour
     public int boardWidth = 12, boardHeight = 12;
     public float boardSquareSpacing = 1;
 
+    public BoardSquare[,] boardSquares;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,27 +24,31 @@ public class Board : MonoBehaviour
 
     private void buildBoard()
     {
+        boardSquares = new BoardSquare[boardWidth, boardHeight];
         for(int j = 0; j < boardHeight; j += 1)
         {
             for(int i = 0; i < boardWidth; i += 1)
             {
                 //placeBoardSquare((i - boardWidth/2) * boardSquareSpacing, (j - boardHeight/2) * boardSquareSpacing);
-                placeBoardSquare(i,j);
+                BoardSquare newSquare = placeBoardSquare(i,j);
+                boardSquares[i, j] = newSquare;
             }
         }
     }
-    private void placeBoardSquare(int x, int y)
+    private BoardSquare placeBoardSquare(int x, int y)
     {
         BoardSquare newSquare = Instantiate(BoardSquarePrefab, transform).GetComponent<BoardSquare>();
         newSquare.gameObject.name += " " + x + "," + y;
         newSquare.PlaceBoardSquare((x - boardWidth/2)*boardSquareSpacing, (y - boardHeight/2)*boardSquareSpacing);
+        return newSquare;
     }
 
-    private void placeBoardSquare(float x, float y)
+    private BoardSquare placeBoardSquare(float x, float y)
     {
         BoardSquare newSquare = Instantiate(BoardSquarePrefab, transform).GetComponent<BoardSquare>();
         newSquare.gameObject.name +=  " " + x + "," + y;
         newSquare.PlaceBoardSquare(x,y);
+        return newSquare;
     }
 
     public void squareClicked(BoardSquare square)

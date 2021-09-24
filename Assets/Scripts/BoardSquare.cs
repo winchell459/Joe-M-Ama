@@ -6,6 +6,8 @@ public abstract class BoardSquare : MonoBehaviour
 {
     public abstract void PlaceBoardSquare(float x, float y);
 
+    public BoardPiece myPiece = null;
+
     private void OnMouseDown()
     {
         FindObjectOfType<Board>().squareClicked(this);
