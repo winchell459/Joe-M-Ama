@@ -5,5 +5,5 @@ using UnityEngine;
 public abstract class BoardPiece : MonoBehaviour
 {
     public BoardSquare mySquare;
-    public abstract bool ValidMove(Vector2 moveSquare);
+    public abstract bool ValidMove(Vector2Int moveSquare);
 }

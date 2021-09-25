@@ -149,13 +149,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 169018871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d65121561bd3c4dbe333c5985cdc6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f8bdbf091313ba44b3afd505d93ea28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   BoardSquarePrefab: {fileID: 1814700486139677373, guid: 7aa3474047c530347bb85ca96c1ae494, type: 3}
   boardWidth: 13
   boardHeight: 13
   boardSquareSpacing: 1.1
+  pawnPrefab: {fileID: 0}
 --- !u!4 &169018873
 Transform:
   m_ObjectHideFlags: 0

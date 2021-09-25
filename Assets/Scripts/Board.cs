@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Board : MonoBehaviour
+public abstract class Board : MonoBehaviour
 {
     public GameObject BoardSquarePrefab;
     public int boardWidth = 12, boardHeight = 12;
@@ -14,13 +14,10 @@ public class Board : MonoBehaviour
     void Start()
     {
         buildBoard();
+        setupBoardPieces();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected abstract void setupBoardPieces();
 
     private void buildBoard()
     {
@@ -51,8 +48,23 @@ public class Board : MonoBehaviour
         return newSquare;
     }
 
-    public void squareClicked(BoardSquare square)
+    public Vector2Int GetSquareIndex(BoardSquare square)
     {
-        Debug.Log(square.name);
+        Vector2Int index = new Vector2Int(-1,-1);
+        for (int j = 0; j < boardHeight; j += 1)
+        {
+            for (int i = 0; i < boardWidth; i += 1)
+            {
+                if (boardSquares[i, j] == square) index = new Vector2Int(i, j);
+            }
+        }
+        return index;
     }
+
+    public BoardSquare GetSquare(Vector2Int index)
+    {
+        return boardSquares[index.x, index.y];
+    }
+
+    public abstract void squareClicked(BoardSquare square);
 }
