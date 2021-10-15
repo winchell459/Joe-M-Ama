@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : BoardPiece
+public class Pawn : ChessPiece
 {
     private bool firstMove = true;
     public override bool ValidMove(Vector2Int moveSquare)

@@ -17,5 +17,9 @@ public abstract class BoardSquare : MonoBehaviour
     public void PlacePiece(BoardPiece piece)
     {
         piece.transform.position = transform.position;
+        myPiece = piece;
+        if(piece.mySquare) piece.mySquare.myPiece = null; //removes piece from previous square
+        piece.mySquare = this;
+
     }
 }

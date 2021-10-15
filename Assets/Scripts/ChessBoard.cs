@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class ChessBoard : Board
 {
-    public Pawn pawnPrefab;
+    public Pawn pawnPrefab, pawnWhitePrefab;
+    public Queen queenBlackPrefab, queenWhitePrefab;
+    public Rook rookBlackPrefab, rookWhitePrefab;
+
     //public Knight knightPrefab;
     
     public override void squareClicked(BoardSquare square)
     {
-        Debug.Log(GetSquareIndex(square));
+        //if no SelectedPiece and selected square has a piece
+        if (!SelectedPiece && square.myPiece) SelectedPiece = square.myPiece;
+        //if there is a SelectedPiece
+        else if(SelectedPiece && SelectedPiece.ValidMove(GetSquareIndex(square))){
+            square.PlacePiece(SelectedPiece);
+            SelectedPiece = null;
+        }
     }
 
     protected override void setupBoardPieces()

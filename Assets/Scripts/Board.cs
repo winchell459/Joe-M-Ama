@@ -10,6 +10,8 @@ public abstract class Board : MonoBehaviour
 
     public BoardSquare[,] boardSquares;
 
+    public BoardPiece SelectedPiece;
+
     // Start is called before the first frame update
     void Start()
     {
