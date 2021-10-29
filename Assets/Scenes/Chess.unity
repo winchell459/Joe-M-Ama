@@ -157,18 +157,18 @@ MonoBehaviour:
   boardHeight: 8
   boardSquareSpacing: 1.1
   SelectedPiece: {fileID: 0}
-  pawnPrefab: {fileID: 2807538098705429203, guid: 2f62de00d650239488966a70d3f15849, type: 3}
+  pawnBlackPrefab: {fileID: 2807538098705429203, guid: 2f62de00d650239488966a70d3f15849, type: 3}
   pawnWhitePrefab: {fileID: 2807538098705429203, guid: 37d0080ddb7963940b5c1291c40a7651, type: 3}
   queenBlackPrefab: {fileID: 694362733752370504, guid: 3295328bc34a907428eec8f41a5257d0, type: 3}
   queenWhitePrefab: {fileID: 694362733752370504, guid: 79c6d787a09e07f439b2a27235c64f6c, type: 3}
   rookBlackPrefab: {fileID: 3992040132218143008, guid: 141a6e1965a905248ae68d3b946ad093, type: 3}
   rookWhitePrefab: {fileID: 3992040132218143008, guid: 4e9e5f44c13956e4b9e3ea837d164727, type: 3}
   knightBlackPrefab: {fileID: 1891901044705460517, guid: 7c69fee096b41b14fa467ea1e1190b9f, type: 3}
-  knightWhitePrefab: {fileID: 6633035510194940525, guid: d3e3639fa26ac7045b1eb2456678ca02, type: 3}
+  knightWhitePrefab: {fileID: 1891901044705460517, guid: 6696d14549cf2874cac85012167df1fa, type: 3}
   kingBlackPrefab: {fileID: 5844340690688275696, guid: 2af5bdad093ff7848b691942c17d4ea5, type: 3}
-  kingWhitePrefab: {fileID: 2927418212577243163, guid: 93bb4f5b200e6214889c6712b0d87dfa, type: 3}
+  kingWhitePrefab: {fileID: 5844340690688275696, guid: 7086c86bd58bc014b948e1296798cd1f, type: 3}
   bishopBlackPrefab: {fileID: 5043180668510574323, guid: d831d6ec5ce61684b805b5c3a8364469, type: 3}
-  bishopWhitePrefab: {fileID: 1264095822038256506, guid: 8613a0dae3b0d1343995a75450cc0379, type: 3}
+  bishopWhitePrefab: {fileID: 5043180668510574323, guid: 214b0dcd94ad6144c88878e44ae93b4a, type: 3}
 --- !u!4 &169018873
 Transform:
   m_ObjectHideFlags: 0
