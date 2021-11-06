@@ -5,6 +5,7 @@ using UnityEngine;
 public class GomokuBoard : Board
 {
     public bool gameOver = false;
+    public BoardPiece.PieceColors winningColor;
     public Rock rockWhitePrefab, rockBlackPrefab;
     public override void squareClicked(BoardSquare square)
     {
@@ -16,11 +17,13 @@ public class GomokuBoard : Board
             gameOver = check(square);
             if(SelectedPiece.pieceColor == BoardPiece.PieceColors.black)
             {
+                if (gameOver) winningColor = BoardPiece.PieceColors.black;
                 SelectedPiece = Instantiate(rockWhitePrefab);
 
             }
             else
             {
+                if (gameOver) winningColor = BoardPiece.PieceColors.white;
                 SelectedPiece = Instantiate(rockBlackPrefab);
             }
             SelectedPiece.gameObject.SetActive(false);
@@ -33,7 +36,7 @@ public class GomokuBoard : Board
 
     bool check(BoardSquare square)
     {
-        int isOverCount = 3;
+        int isOverCount = 5;
         int hCount = 1;
         hCount += count(boardSquares, square.myPiece.pieceColor, GetSquareIndex(square), 1, 0);
         hCount += count(boardSquares, square.myPiece.pieceColor, GetSquareIndex(square), -1, 0);
@@ -62,8 +65,9 @@ public class GomokuBoard : Board
         start = start + new Vector2Int(xStep, yStep);
         int width = boardWidth;
         int height = boardHeight;
-        width = boardSquares.GetUpperBound(0);
-        height = boardSquares.GetUpperBound(1);
+        width = boardSquares.GetUpperBound(0)+1;
+        height = boardSquares.GetUpperBound(1)+1;
+        //Debug.Log($"width: {width}, height: {height}");
         while (start.x >= 0 && start.x < width && start.y >= 0 && start.y < height && boardSquares[start.x, start.y].myPiece && boardSquares[start.x, start.y].myPiece.pieceColor == pieceColor)
         {
             count += 1;
