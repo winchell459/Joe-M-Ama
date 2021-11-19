@@ -22,4 +22,11 @@ public abstract class BoardSquare : MonoBehaviour
         piece.mySquare = this;
 
     }
+
+    public void RemovePiece()
+    {
+        Debug.Log($"Destroy {myPiece.name}");
+        Destroy(myPiece.gameObject);
+        myPiece = null;
+    }
 }

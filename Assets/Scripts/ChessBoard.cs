@@ -22,6 +22,11 @@ public class ChessBoard : Board
             square.PlacePiece(SelectedPiece);
             SelectedPiece = null;
         }
+        else if (SelectedPiece && !SelectedPiece.ValidMove(GetSquareIndex(square)))
+        {
+            
+            SelectedPiece = null;
+        }
     }
 
     protected override void setupBoardPieces()
@@ -57,5 +62,10 @@ public class ChessBoard : Board
         GameObject piece = Instantiate(prefab.gameObject);
         BoardSquare square = GetSquare(new Vector2Int(x, y));
         square.PlacePiece(piece.GetComponent<BoardPiece>());
+    }
+
+    public void RemovePiece(Vector2Int boardPosition)
+    {
+        boardSquares[boardPosition.x, boardPosition.y].RemovePiece();
     }
 }
