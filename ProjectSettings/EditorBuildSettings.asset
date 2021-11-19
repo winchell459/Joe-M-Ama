@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 677a1a780b846624593ba5e352f77860
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 131884f7be147c547b20ff1370a880b3
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: ae4985259003a9745a6ede5bd6f13c2b
+  - enabled: 1
+    path: Assets/Scenes/Chess.unity
+    guid: 865b610a51f8a444cb97cd5d1f00009e
+  - enabled: 1
+    path: Assets/Scenes/Gomoku.unity
+    guid: f505f62e5eec3c14ba21b3710ec16392
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
