@@ -12,21 +12,31 @@ public class ChessBoard : Board
     public Bishop bishopBlackPrefab, bishopWhitePrefab;
 
     //public Knight knightPrefab;
-    
+
+
     public override void squareClicked(BoardSquare square)
     {
+        
+    
+
         //if no SelectedPiece and selected square has a piece
         if (!SelectedPiece && square.myPiece) SelectedPiece = square.myPiece;
         //if there is a SelectedPiece
-        else if(SelectedPiece && SelectedPiece.ValidMove(GetSquareIndex(square))){
+        else if (SelectedPiece && SelectedPiece.ValidMove(GetSquareIndex(square)))
+        {
             square.PlacePiece(SelectedPiece);
+            SelectedPiece = null;
+        }
+        else if (SelectedPiece && !SelectedPiece.ValidMove(GetSquareIndex(square)))
+        {
+
             SelectedPiece = null;
         }
     }
 
     protected override void setupBoardPieces()
     {
-        for(int i = 0; i < boardWidth; i += 1)
+        for (int i = 0; i < boardWidth; i += 1)
         {
             addBoardPiece(pawnBlackPrefab, i, 1);
             addBoardPiece(pawnWhitePrefab, i, 6);
@@ -57,5 +67,10 @@ public class ChessBoard : Board
         GameObject piece = Instantiate(prefab.gameObject);
         BoardSquare square = GetSquare(new Vector2Int(x, y));
         square.PlacePiece(piece.GetComponent<BoardPiece>());
+    }
+
+    public void RemovePiece(Vector2Int boardPosition)
+    {
+        boardSquares[boardPosition.x, boardPosition.y].RemovePiece();
     }
 }

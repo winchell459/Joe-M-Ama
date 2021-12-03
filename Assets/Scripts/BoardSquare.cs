@@ -18,8 +18,15 @@ public abstract class BoardSquare : MonoBehaviour
     {
         piece.transform.position = transform.position;
         myPiece = piece;
-        if(piece.mySquare) piece.mySquare.myPiece = null; //removes piece from previous square
+        if (piece.mySquare) piece.mySquare.myPiece = null; //removes piece from previous square
         piece.mySquare = this;
 
+    }
+
+    public void RemovePiece()
+    {
+        Debug.Log($"Destroy {myPiece.name}");
+        Destroy(myPiece.gameObject);
+        myPiece = null;
     }
 }
