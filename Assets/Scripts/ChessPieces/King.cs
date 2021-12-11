@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class King : ChessPiece
 {
-    
-    public override bool ValidMove(Vector2Int moveSquare)
+    protected override bool checkValidMove(Vector2Int moveSquare)
     {
-        BoardSquare[,] boardSquares = FindObjectOfType<Board>().boardSquares;
+        bool valid = false;
+        if (mySquareIndex.x == moveSquare.x && mySquareIndex.y == moveSquare.y + 1 || mySquareIndex.x == moveSquare.x && mySquareIndex.y == moveSquare.y - 1 || mySquareIndex.x == moveSquare.x + 1 && mySquareIndex.y == moveSquare.y || mySquareIndex.x == moveSquare.x - 1 && mySquareIndex.y == moveSquare.y)
+        {
+            valid = true;
+        }else if(mySquareIndex.x == moveSquare.x + 1 && mySquareIndex.y == moveSquare.y + 1 || mySquareIndex.x == moveSquare.x + 1 && mySquareIndex.y == moveSquare.y - 1 || mySquareIndex.x == moveSquare.x - 1 && mySquareIndex.y == moveSquare.y + 1 || mySquareIndex.x == moveSquare.x - 1 && mySquareIndex.y == moveSquare.y - 1)
+        {
+            valid = true;
+        }
 
-        
-
-
-        bool valid = true;
         return valid;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    protected override bool checkValidAttack(Vector2Int moveSquare)
     {
-        
+        return checkValidMove(moveSquare);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

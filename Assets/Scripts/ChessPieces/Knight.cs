@@ -4,27 +4,23 @@ using UnityEngine;
 
 public class Knight : ChessPiece
 {
-    
-    public override bool ValidMove(Vector2Int moveSquare)
+
+    protected override bool checkValidMove(Vector2Int moveSquare)
     {
-        BoardSquare[,] boardSquares = FindObjectOfType<Board>().boardSquares;
-
-        
-
-
-        bool valid = true;
-        return valid;
+        if ((moveSquare.x == mySquareIndex.x + 1 || moveSquare.x == mySquareIndex.x - 1) && (moveSquare.y == mySquareIndex.y + 2 || moveSquare.y == mySquareIndex.y - 2))
+        {
+            return true;
+        }
+        else if ((moveSquare.x == mySquareIndex.x + 2 || moveSquare.x == mySquareIndex.x - 2) && (moveSquare.y == mySquareIndex.y + 1 || moveSquare.y == mySquareIndex.y - 1))
+        {
+            return true;
+        }
+        else return false;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    protected override bool checkValidAttack(Vector2Int moveSquare)
     {
-        
+        return checkValidMove(moveSquare);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

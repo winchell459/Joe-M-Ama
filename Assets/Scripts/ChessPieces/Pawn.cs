@@ -4,37 +4,45 @@ using UnityEngine;
 
 public class Pawn : ChessPiece
 {
-    private bool firstMove = true;
-    public override bool ValidMove(Vector2Int moveSquare)
+    
+
+    protected override bool checkValidMove(Vector2Int moveSquare)
     {
-        BoardSquare[,] boardSquares = FindObjectOfType<Board>().boardSquares;
-
-        //if(mySquare.x != moveSquare.x)
-        //{
-
-        //}
-        //if (firstMove)
-        //{
-
-        //    firstMove = false;
-        //}
-
-        //if (boardSquares[moveSquare.x, moveSquare.y] == null) ;
-
-
-        bool valid = true;
-        return valid;
+        if(moveSquare.x == mySquareIndex.x && moveSquare.y == mySquareIndex.y + 1 && pieceColor == PieceColors.black)
+        {
+            return true;
+        }else if (moveSquare.x == mySquareIndex.x && moveSquare.y == mySquareIndex.y - 1 && pieceColor == PieceColors.white)
+        {
+            return true;
+        }else if (firstMove && ClearPath(FindObjectOfType<Board>().boardSquares, moveSquare) && moveSquare.x == mySquareIndex.x && moveSquare.y == mySquareIndex.y + 2 && pieceColor == PieceColors.black)
+        {
+            return true;
+        }
+        else if (firstMove && ClearPath(FindObjectOfType<Board>().boardSquares, moveSquare) && moveSquare.x == mySquareIndex.x && moveSquare.y == mySquareIndex.y - 2 && pieceColor == PieceColors.white)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-
-    // Start is called before the first frame update
-    void Start()
+    protected override bool checkValidAttack(Vector2Int moveSquare)
     {
+        if ((moveSquare.x == mySquareIndex.x + 1 || moveSquare.x == mySquareIndex.x - 1) && moveSquare.y == mySquareIndex.y + 1 && pieceColor == PieceColors.black)
+        {
+            return true;
+        }
+        else if ((moveSquare.x == mySquareIndex.x + 1 || moveSquare.x == mySquareIndex.x - 1) && moveSquare.y == mySquareIndex.y - 1 && pieceColor == PieceColors.white)
+        {
+            return true;
+        }
         
+        else
+        {
+            return false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

@@ -4,10 +4,36 @@ using UnityEngine;
 
 public abstract class ChessPiece : BoardPiece
 {
+    public bool firstMove = true;
+    protected Vector2Int mySquareIndex { get { return FindObjectOfType<Board>().GetSquareIndex(mySquare); } }
+    protected abstract bool checkValidMove(Vector2Int moveSquare);
+    protected abstract bool checkValidAttack(Vector2Int moveSquare);
+    public override bool ValidMove(Vector2Int moveSquare)
+    {
+        BoardSquare[,] boardSquares = FindObjectOfType<Board>().boardSquares;
+        if (boardSquares[moveSquare.x, moveSquare.y].myPiece == null && checkValidMove(moveSquare))
+        {
+            FindObjectOfType<Board>().GetSquare(moveSquare).PlacePiece(this);
+            firstMove = false;
+            return true;
+        }
+        else if (boardSquares[moveSquare.x, moveSquare.y].myPiece != null && boardSquares[moveSquare.x, moveSquare.y].myPiece.pieceColor != pieceColor && checkValidAttack(moveSquare))
+        {
+            FindObjectOfType<ChessBoard>().RemovePiece(moveSquare);
+            FindObjectOfType<Board>().GetSquare(moveSquare).PlacePiece(this);
+            
+            firstMove = false;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     protected bool ClearPath(BoardSquare[,] boardSquares, Vector2Int destination)
     {
         bool valid = false;
-        Vector2Int start = FindObjectOfType<Board>().GetSquareIndex(mySquare);
+        Vector2Int start = mySquareIndex;//FindObjectOfType<Board>().GetSquareIndex(mySquare);
         if (start.y == destination.y)
         {
             if (start.x > destination.x)

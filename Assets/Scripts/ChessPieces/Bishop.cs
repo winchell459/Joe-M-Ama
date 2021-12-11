@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class Bishop : ChessPiece
 {
+
+    protected override bool checkValidMove(Vector2Int moveSquare)
+    {
+        if (mySquareIndex.x != moveSquare.x && mySquareIndex.y != moveSquare.y && ClearPath(FindObjectOfType<Board>().boardSquares, moveSquare))
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+
+    protected override bool checkValidAttack(Vector2Int moveSquare)
+    {
+        return checkValidMove(moveSquare);
+    }
     
-    public override bool ValidMove(Vector2Int moveSquare)
-    {
-        BoardSquare[,] boardSquares = FindObjectOfType<Board>().boardSquares;
-
-        
-
-
-        bool valid = true;
-        return valid;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

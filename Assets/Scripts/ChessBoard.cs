@@ -13,24 +13,41 @@ public class ChessBoard : Board
 
     //public Knight knightPrefab;
 
+    public BoardPiece.PieceColors colorTurn = BoardPiece.PieceColors.white;
 
     public override void squareClicked(BoardSquare square)
     {
-        
-    
 
+
+        if (GameOver) return;
         //if no SelectedPiece and selected square has a piece
-        if (!SelectedPiece && square.myPiece) SelectedPiece = square.myPiece;
+        if (!SelectedPiece && square.myPiece && square.myPiece.pieceColor == colorTurn) SelectedPiece = square.myPiece;
         //if there is a SelectedPiece
         else if (SelectedPiece && SelectedPiece.ValidMove(GetSquareIndex(square)))
         {
-            square.PlacePiece(SelectedPiece);
+            //square.PlacePiece(SelectedPiece);
             SelectedPiece = null;
+           
+            colorTurn = (BoardPiece.PieceColors)((int)(colorTurn + 1) % 2);
         }
         else if (SelectedPiece && !SelectedPiece.ValidMove(GetSquareIndex(square)))
         {
 
             SelectedPiece = null;
+            
+        }
+        checkGameEnding();
+    }
+    public bool GameOver;
+    public BoardPiece.PieceColors Winner;
+    private void checkGameEnding()
+    {
+        King[] kings = FindObjectsOfType<King>();
+        if(kings.Length < 2)
+        {
+            GameOver = true;
+            Winner = kings[0].pieceColor;
+            Debug.Log($"Game over! {Winner} wins.");
         }
     }
 
