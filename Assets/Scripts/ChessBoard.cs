@@ -38,16 +38,16 @@ public class ChessBoard : Board
         }
         checkGameEnding();
     }
-    public bool GameOver;
-    public BoardPiece.PieceColors Winner;
+    
+    
     private void checkGameEnding()
     {
         King[] kings = FindObjectsOfType<King>();
         if(kings.Length < 2)
         {
             GameOver = true;
-            Winner = kings[0].pieceColor;
-            Debug.Log($"Game over! {Winner} wins.");
+            winningColor = kings[0].pieceColor;
+            Debug.Log($"Game over! {winningColor} wins.");
         }
     }
 

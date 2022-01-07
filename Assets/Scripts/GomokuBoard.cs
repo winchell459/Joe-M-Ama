@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class GomokuBoard : Board
 {
-    public bool gameOver = false;
-    public BoardPiece.PieceColors winningColor;
+    
+    
     public Rock rockWhitePrefab, rockBlackPrefab;
     public override void squareClicked(BoardSquare square)
     {
-        if(!gameOver && SelectedPiece.ValidMove(GetSquareIndex(square)))
+        if(!GameOver && SelectedPiece.ValidMove(GetSquareIndex(square)))
         {
             square.PlacePiece(SelectedPiece);
             SelectedPiece.gameObject.SetActive(true);
 
-            gameOver = check(square);
+            GameOver = check(square);
             if(SelectedPiece.pieceColor == BoardPiece.PieceColors.black)
             {
-                if (gameOver) winningColor = BoardPiece.PieceColors.black;
+                if (GameOver) winningColor = BoardPiece.PieceColors.black;
                 SelectedPiece = Instantiate(rockWhitePrefab);
 
             }
             else
             {
-                if (gameOver) winningColor = BoardPiece.PieceColors.white;
+                if (GameOver) winningColor = BoardPiece.PieceColors.white;
                 SelectedPiece = Instantiate(rockBlackPrefab);
             }
             SelectedPiece.gameObject.SetActive(false);

@@ -11,7 +11,8 @@ public abstract class Board : MonoBehaviour
     public BoardSquare[,] boardSquares;
 
     public BoardPiece SelectedPiece;
-
+    public bool GameOver;
+    public BoardPiece.PieceColors winningColor;
     // Start is called before the first frame update
     void Start()
     {
