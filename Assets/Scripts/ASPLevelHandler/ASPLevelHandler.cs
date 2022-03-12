@@ -13,4 +13,5 @@ public abstract class ASPLevelHandler : MonoBehaviour
     protected abstract void UNSATISFIABLE(string jobID);
     protected abstract void TIMEDOUT(int time, string jobID);
     protected abstract void ERROR(string error, string jobID);
+
 }
