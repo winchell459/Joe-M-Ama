@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e36b139487c7df468f852df1506f6e4, type: 3}
+  m_Name: MapKeyChessPieces
+  m_EditorClassIdentifier: 
+  widthKey: width
+  heightKey: height
+  typeKey: piece_start
+  xIndex: 0
+  yIndex: 1
+  typeIndex: 2
+  dict:
+    mapObjects:
+    - key: bishop_black
+      obj: {fileID: 5043180668510574323, guid: d831d6ec5ce61684b805b5c3a8364469, type: 3}
+    - key: bishop_white
+      obj: {fileID: 5043180668510574323, guid: 214b0dcd94ad6144c88878e44ae93b4a, type: 3}
+    - key: king_black
+      obj: {fileID: 5844340690688275696, guid: 2af5bdad093ff7848b691942c17d4ea5, type: 3}
+    - key: king_white
+      obj: {fileID: 5844340690688275696, guid: 7086c86bd58bc014b948e1296798cd1f, type: 3}
+    - key: knight_black
+      obj: {fileID: 1891901044705460517, guid: 7c69fee096b41b14fa467ea1e1190b9f, type: 3}
+    - key: knight_white
+      obj: {fileID: 1891901044705460517, guid: 6696d14549cf2874cac85012167df1fa, type: 3}
+    - key: pawn_black
+      obj: {fileID: 2807538098705429203, guid: 2f62de00d650239488966a70d3f15849, type: 3}
+    - key: pawn_white
+      obj: {fileID: 1653570245849981618, guid: dd4c19dbb3179aa4292e8dbc1fd3df0b, type: 3}
+    - key: queen_black
+      obj: {fileID: 694362733752370504, guid: 3295328bc34a907428eec8f41a5257d0, type: 3}
+    - key: queen_white
+      obj: {fileID: 694362733752370504, guid: 79c6d787a09e07f439b2a27235c64f6c, type: 3}
+    - key: rook_black
+      obj: {fileID: 3992040132218143008, guid: 141a6e1965a905248ae68d3b946ad093, type: 3}
+    - key: rook_white
+      obj: {fileID: 3992040132218143008, guid: 4e9e5f44c13956e4b9e3ea837d164727, type: 3}
