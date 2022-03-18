@@ -520,7 +520,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 826cfd8c5c313da4781fb86528d3105b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -626,8 +626,8 @@ MonoBehaviour:
   map: {fileID: 1892905860}
   mapKey: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
   runOnAwake: 0
-  boardWidth: 10
-  boardHeight: 10
+  boardWidth: 20
+  boardHeight: 20
 --- !u!4 &1969132358
 Transform:
   m_ObjectHideFlags: 0
