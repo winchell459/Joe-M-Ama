@@ -11,6 +11,8 @@ public class ChessLevelHandler : ASPLevelHandler
     [SerializeField] MapKeyTileRule mapKeyTileRule;
     [SerializeField] MapPixel mapPixel;
     [SerializeField] MapKeyPixel mapKeyPixel;
+    [SerializeField] MapBoardPiece mapBoardPiece;
+    [SerializeField] MapKeyBoardPiece mapKeyBoardPiece;
 
     private void Start()
     {
@@ -28,6 +30,7 @@ public class ChessLevelHandler : ASPLevelHandler
         mapTileRule.DisplayMap(answerSet, mapKeyTileRule);
         mapTileRule.AdjustCamera();
         mapPixel.DisplayMap(answerSet, mapKeyPixel);
+        mapBoardPiece.DisplayMap(answerSet, mapKeyBoardPiece);
     }
 
     protected override void TIMEDOUT(int time, string jobID)
