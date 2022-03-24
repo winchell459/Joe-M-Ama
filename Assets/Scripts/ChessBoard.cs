@@ -78,6 +78,10 @@ public class ChessBoard : Board
         addBoardPiece(queenWhitePrefab, 3, 7);
         addBoardPiece(kingWhitePrefab, 4, 7);
     }
+    public void AddBoardPiece(ChessPiece prefab, int x, int y)
+    {
+        addBoardPiece(prefab, x, y);
+    }
 
     private void addBoardPiece(ChessPiece prefab, int x, int y)
     {

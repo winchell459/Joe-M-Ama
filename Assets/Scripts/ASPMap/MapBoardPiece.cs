@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MapBoardPiece : ASPMap
 {
+    [SerializeField] ChessBoard board;
+
     override public void DisplayMap(Clingo.AnswerSet answerset, MapKey mapKey)
     {
         DisplayMap(answerset, mapKey.widthKey, mapKey.heightKey, mapKey.typeKey, mapKey.xIndex, mapKey.yIndex, mapKey.typeIndex, ((MapKeyBoardPiece)mapKey).dict);
@@ -27,7 +29,9 @@ public class MapBoardPiece : ASPMap
 
             string pixelType = pieceStart[pixelTypeIndex];
 
-            BoardPiece piece = Instantiate(dict[pixelType], new Vector3(x, y, 0), Quaternion.identity);
+            //BoardPiece piece = Instantiate(dict[pixelType], new Vector3(x, y, 0), Quaternion.identity);
+            board.AddBoardPiece((ChessPiece)dict[pixelType], x, y);
+
         }
     }
 }
