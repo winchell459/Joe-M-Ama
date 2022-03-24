@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Clingo
 {
-    [System.Serializable]
+    //[System.Serializable]
     public class AnswerSet
     {
         public string Solver;

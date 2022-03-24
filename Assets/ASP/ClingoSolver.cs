@@ -194,9 +194,9 @@ namespace Clingo
                 return;
             }
 
-
-            ClingoRoot clingoOutput = JsonUtility.FromJson<ClingoRoot>(clingoConsoleOutput);
             answerSet = AnswerSet.GetAnswerSet(clingoConsoleOutput);
+            ClingoRoot clingoOutput = JsonUtility.FromJson<ClingoRoot>(clingoConsoleOutput);
+            
 
             if (clingoOutput == null)
             {
@@ -257,6 +257,8 @@ namespace Clingo
                 totalSolutionsFound = clingoOutput.Models.Number;
                 moreSolutions = !clingoOutput.Models.More.Equals("no");
                 duration = clingoOutput.Time.Total;
+
+                //answerSet = AnswerSet.GetAnswerSet(clingoConsoleOutput);
             }
             isSolverRunning = false;
             UnityEngine.Debug.Log("Solver is Done.");

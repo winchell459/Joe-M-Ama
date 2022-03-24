@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &41266233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +269,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &547751110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547751112}
+  - component: {fileID: 547751111}
+  m_Layer: 0
+  m_Name: ChessGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &547751111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547751110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f4bbe353079493587facd3a031b76f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cpus: 4
+  timeout: 100
+  Solver: {fileID: 1661895264}
+  map: {fileID: 0}
+  mapKey: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
+  runOnAwake: 0
+  boardWidth: 20
+  boardHeight: 20
+  pieces:
+  - {fileID: 11400000, guid: aba8dd661a716445eb594002f5ed9ba1, type: 2}
+  - {fileID: 11400000, guid: a264079ab97c24b1496d74030c5fe0fe, type: 2}
+  - {fileID: 11400000, guid: 778703e937f41441d964d7e033385682, type: 2}
+  - {fileID: 11400000, guid: 9b24197f35cfd4820b0ca4730281ae81, type: 2}
+  - {fileID: 11400000, guid: 6d6c56e89e2db4d4cb0a71e5d86ca323, type: 2}
+  - {fileID: 11400000, guid: ee18ff25d23bb466b913db55bcbba0c0, type: 2}
+  - {fileID: 11400000, guid: 3a1f52afd8b0e4d1fa4a9d8553175e87, type: 2}
+  - {fileID: 11400000, guid: 0f733fc109df54f0cb47280e26b64918, type: 2}
+  - {fileID: 11400000, guid: 73c2b2f60c87c489381debcfd7e8b3df, type: 2}
+  - {fileID: 11400000, guid: bd67b4b7928bb45f4ad3a7bc9337ab4e, type: 2}
+--- !u!4 &547751112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547751110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -305.77924, y: 486.92572, z: -23.915466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959928843
 GameObject:
@@ -519,20 +581,6 @@ MonoBehaviour:
   seed: 42
   useRandomSeed: 1
   saveToFile: 1
-  answerSet:
-    Solver: 
-    Input: []
-    Call:
-      Witnesses:
-        Value:
-          RawValue: []
-    Result: 
-    Time:
-      Total: 0
-      Solve: 0
-      Model: 0
-      Unsat: 0
-      CPU: 0
 --- !u!4 &1661895265
 Transform:
   m_ObjectHideFlags: 0
@@ -563,7 +611,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1748072226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,11 +624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee5db0311f25b24a841cf8f658eafc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generator: {fileID: 1969132357}
+  generator: {fileID: 547751111}
   mapTileRule: {fileID: 1892905860}
   mapKeyTileRule: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
   mapPixel: {fileID: 145318781}
   mapKeyPixel: {fileID: 11400000, guid: b6dd73676a676a447a4d790e48266823, type: 2}
+  mapBoardPiece: {fileID: 1459134316}
+  mapKeyBoardPiece: {fileID: 11400000, guid: 6f4daae6f3c37a341a93e308eab46cf9, type: 2}
 --- !u!4 &1748072227
 Transform:
   m_ObjectHideFlags: 0

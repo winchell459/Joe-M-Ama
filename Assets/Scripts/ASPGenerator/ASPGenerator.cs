@@ -36,6 +36,7 @@ public class ASPGenerator : MonoBehaviour
         {
             if (Solver.SolverStatus == Clingo.ClingoSolver.Status.SATISFIABLE)
             {
+                Debug.Log("ASPGenerator SATISFIABLE");
                 //map.DisplayMap(Solver.answerSet,mapKey);
                 satisfiableCallBack(Solver.answerSet, jobID);
                 //waitingOnClingo = false;

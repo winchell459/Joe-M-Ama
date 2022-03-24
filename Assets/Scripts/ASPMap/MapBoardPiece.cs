@@ -19,7 +19,7 @@ public class MapBoardPiece : ASPMap
             if (int.Parse(h[0]) > height) height = int.Parse(h[0]);
         }
 
-
+        Debug.Log("MapBoardPiece.DisplayMap");
         foreach (List<string> pieceStart in answerset.Value[pieceKey])
         {
             int x = int.Parse(pieceStart[xIndex]) - 1;
