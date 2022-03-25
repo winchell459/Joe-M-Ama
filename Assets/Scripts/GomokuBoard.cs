@@ -82,4 +82,16 @@ public class GomokuBoard : Board
         SelectedPiece = Instantiate(rockBlackPrefab);
         SelectedPiece.gameObject.SetActive(false);
     }
- }
+
+    private void addBoardPiece(BoardPiece prefab, int x, int y)
+    {
+        GameObject piece = Instantiate(prefab.gameObject);
+        BoardSquare square = GetSquare(new Vector2Int(x, y));
+        square.PlacePiece(piece.GetComponent<BoardPiece>());
+    }
+
+    public void AddBoardPiece(BoardPiece prefab, int x, int y)
+    {
+        addBoardPiece(prefab, x, y);
+    }
+}

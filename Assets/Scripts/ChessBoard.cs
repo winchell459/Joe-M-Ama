@@ -86,6 +86,11 @@ public class ChessBoard : Board
         square.PlacePiece(piece.GetComponent<BoardPiece>());
     }
 
+    public void AddBoardPiece(ChessPiece prefab, int x, int y)
+    {
+        addBoardPiece(prefab, x, y);
+    }
+
     public void RemovePiece(Vector2Int boardPosition)
     {
         boardSquares[boardPosition.x, boardPosition.y].RemovePiece();
