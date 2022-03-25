@@ -9,7 +9,7 @@ public class ChessLevelHandler : ASPLevelHandler
 
     [SerializeField] MapTileRule mapTileRule;
     [SerializeField] MapKeyTileRule mapKeyTileRule;
-    [SerializeField] MapPixel mapPixel;
+    [SerializeField] MapBoard mapPixel;
     [SerializeField] MapKeyPixel mapKeyPixel;
     [SerializeField] MapBoardPiece mapBoardPiece;
     [SerializeField] MapKeyBoardPiece mapKeyBoardPiece;

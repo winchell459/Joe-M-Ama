@@ -29,8 +29,9 @@ public class MapBoardPiece : ASPMap
 
             string piece = pieceStart[pieceTypeIndex];
 
+            Debug.Log(piece);
             //BoardPiece boardPiece = Instantiate(dict[piece], new Vector3(x, y, 0), Quaternion.identity);
-            board.AddBoardPiece((ChessPiece)dict[pieceKey], x, y);
+            board.AddBoardPiece((ChessPiece)dict[piece], x, y);
         }
     }
 }

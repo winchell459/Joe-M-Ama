@@ -319,7 +319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959928843
 GameObject:
@@ -484,7 +484,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1634144058
 GameObject:
@@ -515,8 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8926f10f46632419fcddbbf7e7fe44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tileSpacing: 1.1
-  board: {fileID: 0}
+  tileSpacing: 1
+  board: {fileID: 2054422170}
 --- !u!4 &1634144060
 Transform:
   m_ObjectHideFlags: 0
@@ -529,7 +529,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1661895263
 GameObject:
@@ -597,7 +597,52 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1687426226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687426228}
+  - component: {fileID: 1687426227}
+  m_Layer: 0
+  m_Name: MapBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1687426227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687426226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acb0c5b115148dd4d8e58a6944ab1bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileSpacing: 1
+  board: {fileID: 2054422170}
+--- !u!4 &1687426228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687426226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748072225
 GameObject:
@@ -631,7 +676,7 @@ MonoBehaviour:
   generator: {fileID: 595343207}
   mapTileRule: {fileID: 1892905860}
   mapKeyTileRule: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
-  mapPixel: {fileID: 145318781}
+  mapPixel: {fileID: 1687426227}
   mapKeyPixel: {fileID: 11400000, guid: b6dd73676a676a447a4d790e48266823, type: 2}
   mapBoardPiece: {fileID: 1634144059}
   mapKeyBoardPiece: {fileID: 11400000, guid: 2c295bd4851c16745b55107180e8b49f, type: 2}
@@ -647,7 +692,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1873321783
 GameObject:
@@ -743,7 +788,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892905859
 GameObject:
@@ -789,4 +834,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2054422169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2054422171}
+  - component: {fileID: 2054422170}
+  m_Layer: 0
+  m_Name: ChessBoard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2054422170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054422169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b3c362f731f054196e68cdea37ca9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoardSquarePrefab: {fileID: 1814700486139677373, guid: 7aa3474047c530347bb85ca96c1ae494, type: 3}
+  boardWidth: 20
+  boardHeight: 20
+  boardSquareSpacing: 1
+  SelectedPiece: {fileID: 0}
+  GameOver: 0
+  winningColor: 0
+  pawnBlackPrefab: {fileID: 0}
+  pawnWhitePrefab: {fileID: 0}
+  queenBlackPrefab: {fileID: 0}
+  queenWhitePrefab: {fileID: 0}
+  rookBlackPrefab: {fileID: 0}
+  rookWhitePrefab: {fileID: 0}
+  knightBlackPrefab: {fileID: 0}
+  knightWhitePrefab: {fileID: 0}
+  kingBlackPrefab: {fileID: 0}
+  kingWhitePrefab: {fileID: 0}
+  bishopBlackPrefab: {fileID: 0}
+  bishopWhitePrefab: {fileID: 0}
+  colorTurn: 0
+--- !u!4 &2054422171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054422169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
