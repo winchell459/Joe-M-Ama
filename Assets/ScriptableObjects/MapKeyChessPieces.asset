@@ -35,7 +35,7 @@ MonoBehaviour:
     - key: pawn_black
       obj: {fileID: 2807538098705429203, guid: 2f62de00d650239488966a70d3f15849, type: 3}
     - key: pawn_white
-      obj: {fileID: 1653570245849981618, guid: dd4c19dbb3179aa4292e8dbc1fd3df0b, type: 3}
+      obj: {fileID: 2807538098705429203, guid: 37d0080ddb7963940b5c1291c40a7651, type: 3}
     - key: queen_black
       obj: {fileID: 694362733752370504, guid: 3295328bc34a907428eec8f41a5257d0, type: 3}
     - key: queen_white

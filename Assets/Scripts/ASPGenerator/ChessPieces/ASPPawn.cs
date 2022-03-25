@@ -7,6 +7,26 @@ public class ASPPawn : ASPChessPiece
 {
     public override string GetASPCode(string predicate, string landingTile, string emptyTile, string obstacleTile)
     {
-        return base.GetASPCode(predicate, landingTile, emptyTile, obstacleTile);
+        string aspCode = $@"
+
+        ";
+
+        if(PieceColor == BoardPiece.PieceColors.black)
+        {
+            aspCode += $@"
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX-1, YY), tile(XX,YY,{landingTile}).
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX-1, YY+1), tile(XX,YY,{landingTile}).
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX-1, YY-1), tile(XX,YY,{landingTile}).
+            ";
+        }
+        else
+        {
+            aspCode += $@"
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX+1, YY), tile(XX,YY,{landingTile}).
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX+1, YY+1), tile(XX,YY,{landingTile}).
+                {Name}_{predicate}(XX,YY) :- {Name}_{predicate}(XX+1, YY-1), tile(XX,YY,{landingTile}).
+            ";
+        }
+        return aspCode;
     }
 }

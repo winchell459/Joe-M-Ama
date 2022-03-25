@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8ec11fe32af6405bb570fa51160f6a1, type: 3}
-  m_Name: rook_black
+  m_Script: {fileID: 11500000, guid: 126ec0fb7b57c410eb45829bb529e5ba, type: 3}
+  m_Name: pawn_black
   m_EditorClassIdentifier: 
-  Name: rook_black
+  Name: pawn_black
   moves: []
-  Start: {x: 7, y: 18}
+  Start: {x: 10, y: 17}
   Target: king_white
   PieceColor: 1

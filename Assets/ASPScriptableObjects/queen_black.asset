@@ -16,3 +16,4 @@ MonoBehaviour:
   moves: []
   Start: {x: 9, y: 19}
   Target: king_white
+  PieceColor: 1
