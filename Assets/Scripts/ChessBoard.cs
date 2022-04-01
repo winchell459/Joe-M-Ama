@@ -86,9 +86,9 @@ public class ChessBoard : Board
         square.PlacePiece(piece.GetComponent<BoardPiece>());
     }
 
-    public void AddBoardPiece(ChessPiece prefab, int x, int y)
+    public override void AddBoardPiece(BoardPiece prefab, int x, int y)
     {
-        addBoardPiece(prefab, x, y);
+        addBoardPiece((ChessPiece)prefab, x, y);
     }
 
     public void RemovePiece(Vector2Int boardPosition)

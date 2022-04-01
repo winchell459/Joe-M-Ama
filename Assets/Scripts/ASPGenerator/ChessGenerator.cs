@@ -24,6 +24,7 @@ public class ChessGenerator : CheckeredPathGenerator
             chess_pieces(king_black;king_white).
             0{{piece_start(XX,YY,Type): chess_pieces(Type)}}1 :- tile(XX,YY,{tile_types.filled}).
             piece_path(XX,YY) :- piece_start(XX,YY,_).
+
         ";
 
         return aspCode;

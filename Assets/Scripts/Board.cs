@@ -21,6 +21,7 @@ public abstract class Board : MonoBehaviour
     }
 
     protected abstract void setupBoardPieces();
+    public abstract void AddBoardPiece(BoardPiece prefab, int x, int y);
 
     private void buildBoard()
     {

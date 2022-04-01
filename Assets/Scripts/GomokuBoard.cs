@@ -90,7 +90,7 @@ public class GomokuBoard : Board
         square.PlacePiece(piece.GetComponent<BoardPiece>());
     }
 
-    public void AddBoardPiece(BoardPiece prefab, int x, int y)
+    public override void AddBoardPiece(BoardPiece prefab, int x, int y)
     {
         addBoardPiece(prefab, x, y);
     }

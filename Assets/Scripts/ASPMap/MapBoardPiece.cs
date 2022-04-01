@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MapBoardPiece : ASPMap
 {
-    [SerializeField] ChessBoard board;
+    [SerializeField] Board board;
 
     override public void DisplayMap(Clingo.AnswerSet answerset, MapKey mapKey)
     {
@@ -31,7 +31,7 @@ public class MapBoardPiece : ASPMap
 
             Debug.Log(piece);
             //BoardPiece boardPiece = Instantiate(dict[piece], new Vector3(x, y, 0), Quaternion.identity);
-            board.AddBoardPiece((ChessPiece)dict[piece], x, y);
+            board.AddBoardPiece(dict[piece], x, y);
         }
     }
 }
