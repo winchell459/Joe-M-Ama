@@ -30,7 +30,7 @@ public class MapBoard : ASPMap
             string color = pieceStart[pieceTypeIndex];
 
             board.boardSquares[x, y].gameObject.SetActive(true);
-            board.boardSquares[x, y].GetComponent<SpriteRenderer>().color = dict[color];
+            if(board.boardSquares[x, y].GetComponent<SpriteRenderer>()) board.boardSquares[x, y].GetComponent<SpriteRenderer>().color = dict[color];
         }
     }
 }

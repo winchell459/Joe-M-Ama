@@ -26,8 +26,8 @@ public class GomokuLevelHandler : ASPLevelHandler
 
     protected override void SATISFIABLE(Clingo.AnswerSet answerSet, string jobID)
     {
-        mapTileRule.DisplayMap(answerSet, mapKeyTileRule);
-        mapTileRule.AdjustCamera();
+        //mapTileRule.DisplayMap(answerSet, mapKeyTileRule);
+        //mapTileRule.AdjustCamera();
         mapPixel.DisplayMap(answerSet, mapKeyPixel);
         mapBoardPiece.DisplayMap(answerSet, mapKeyBoardPiece);
     }

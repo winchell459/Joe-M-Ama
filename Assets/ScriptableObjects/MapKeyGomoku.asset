@@ -21,6 +21,6 @@ MonoBehaviour:
   dict:
     mapObjects:
     - key: black
-      obj: {fileID: 8061092591570986380, guid: fc39daaa017ea714dbf9413a53f021de, type: 3}
+      obj: {fileID: 1531404582790314202, guid: 454912b8aa215bb4a920e75d94cab3fa, type: 3}
     - key: white
-      obj: {fileID: 4292659773763971577, guid: 421cb22d052702f47ab0a014ff7fd229, type: 3}
+      obj: {fileID: 5409039887369566088, guid: ff183569ad7aa03449df5442d2dea71f, type: 3}

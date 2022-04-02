@@ -24,3 +24,11 @@ MonoBehaviour:
       obj: {fileID: 5844340690688275696, guid: 7086c86bd58bc014b948e1296798cd1f, type: 3}
     - key: king_black
       obj: {fileID: 5844340690688275696, guid: 2af5bdad093ff7848b691942c17d4ea5, type: 3}
+    - key: pawn_black
+      obj: {fileID: 2807538098705429203, guid: 2f62de00d650239488966a70d3f15849, type: 3}
+    - key: pawn_white
+      obj: {fileID: 2807538098705429203, guid: 37d0080ddb7963940b5c1291c40a7651, type: 3}
+    - key: queen_white
+      obj: {fileID: 694362733752370504, guid: 79c6d787a09e07f439b2a27235c64f6c, type: 3}
+    - key: queen_black
+      obj: {fileID: 694362733752370504, guid: 3295328bc34a907428eec8f41a5257d0, type: 3}
