@@ -28,6 +28,7 @@ public class GomokuLevelHandler : ASPLevelHandler
     {
         //mapTileRule.DisplayMap(answerSet, mapKeyTileRule);
         //mapTileRule.AdjustCamera();
+        Debug.Log("Gomoku finished");
         mapPixel.DisplayMap(answerSet, mapKeyPixel);
         mapBoardPiece.DisplayMap(answerSet, mapKeyBoardPiece);
     }

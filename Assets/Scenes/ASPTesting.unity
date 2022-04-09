@@ -342,8 +342,8 @@ MonoBehaviour:
   map: {fileID: 0}
   mapKey: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
   runOnAwake: 0
-  boardWidth: 20
-  boardHeight: 20
+  boardWidth: 15
+  boardHeight: 15
 --- !u!4 &429781716
 Transform:
   m_ObjectHideFlags: 0
@@ -659,8 +659,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoardSquarePrefab: {fileID: 5171451077518705096, guid: c2bf963f14c5d1543841ef1465a47827, type: 3}
-  boardWidth: 20
-  boardHeight: 20
+  boardWidth: 15
+  boardHeight: 15
   boardSquareSpacing: 1.1
   SelectedPiece: {fileID: 0}
   GameOver: 0

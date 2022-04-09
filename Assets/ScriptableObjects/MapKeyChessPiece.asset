@@ -32,3 +32,15 @@ MonoBehaviour:
       obj: {fileID: 694362733752370504, guid: 79c6d787a09e07f439b2a27235c64f6c, type: 3}
     - key: queen_black
       obj: {fileID: 694362733752370504, guid: 3295328bc34a907428eec8f41a5257d0, type: 3}
+    - key: rook_black
+      obj: {fileID: 3992040132218143008, guid: 141a6e1965a905248ae68d3b946ad093, type: 3}
+    - key: rook_white
+      obj: {fileID: 3992040132218143008, guid: 4e9e5f44c13956e4b9e3ea837d164727, type: 3}
+    - key: bishop_white
+      obj: {fileID: 5043180668510574323, guid: 214b0dcd94ad6144c88878e44ae93b4a, type: 3}
+    - key: bishop_black
+      obj: {fileID: 5043180668510574323, guid: d831d6ec5ce61684b805b5c3a8364469, type: 3}
+    - key: knight_black
+      obj: {fileID: 1891901044705460517, guid: 7c69fee096b41b14fa467ea1e1190b9f, type: 3}
+    - key: knight_white
+      obj: {fileID: 1891901044705460517, guid: 6696d14549cf2874cac85012167df1fa, type: 3}
