@@ -46,8 +46,30 @@ public class ChessGenerator : CheckeredPathGenerator
             
             :- piece_start(XX,YY, T1,ID1), piece_start(XX,YY,T2,ID2), T1 != T2.
             :- piece_start(XX,YY, T1,ID1), piece_start(XX,YY,T2,ID2), ID1 != ID2.
+
             piece_path(XX,YY) :- piece_start(XX,YY,_,_).
+            piece_path(XX,YY) :- piece_path(XX,YY,_,_).
             
+            %% pawn movement
+            piece_path(XX,YY,pawn_black,ID) :- piece_start(XX,YY,pawn_black,ID).
+            piece_path(XX,YY,pawn_black,ID) :- piece_path(XX,YY-1,pawn_black,ID), tile(XX,YY,{tile_types.filled}).
+
+            piece_path(XX,YY,pawn_white,ID) :- piece_start(XX,YY,pawn_white,ID).
+            piece_path(XX,YY,pawn_white,ID) :- piece_path(XX,YY+1,pawn_white,ID), tile(XX,YY,{tile_types.filled}).
+
+            %% queen movement
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX,YY,Queen,ID), Queen = (queen_white;queen_black).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX + II,YY,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(II).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX - II,YY,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(II).
+
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX,YY + JJ,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), height(JJ).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX,YY - JJ,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), height(JJ).
+
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX + Offset,YY + Offset,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(Offset).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX - Offset,YY + Offset,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(Offset).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX + Offset,YY - Offset,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(Offset).
+            piece_path(XX,YY,Queen,ID) :- piece_start(XX - Offset,YY - Offset,Queen,ID), Queen = (queen_white;queen_black), tile(XX,YY,{tile_types.filled}), width(Offset).
+
         ";
 
         return aspCode;
