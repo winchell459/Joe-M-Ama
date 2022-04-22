@@ -14,6 +14,6 @@ public class ASPGomokuBoard : GomokuBoard
                 boardSquares[i, j].gameObject.SetActive(false);
             }
         }
-
+        base.setupBoardPieces();
     }
 }

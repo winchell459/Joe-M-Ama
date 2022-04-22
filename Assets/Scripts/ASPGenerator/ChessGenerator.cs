@@ -5,6 +5,11 @@ using UnityEngine;
 public class ChessGenerator : CheckeredPathGenerator
 {
     [SerializeField] bool hasKings, hasQueens,  hasPawns,  hasBishops,  hasKnights,  hasRooks;
+    [SerializeField] int kingCount=1, queenCount=1, pawnCount=4, bishopCount=2, knightCount=2, rookCount=2;
+    protected override string getAdditionalParameters()
+    {
+        return $" -c max_king={kingCount} -c max_queen={queenCount} -c max_pawn={pawnCount} -c max_bishop={bishopCount} -c max_knight={knightCount} -c max_rook={rookCount} " + base.getAdditionalParameters();
+    }
     public void InitializeGenerator(bool hasKings, bool hasQueens, bool hasPawns, bool hasBishops, bool hasKnights, bool hasRooks)
     {
         this.hasKings = hasKings;
@@ -13,6 +18,22 @@ public class ChessGenerator : CheckeredPathGenerator
         this.hasKnights = hasKnights;
         this.hasBishops = hasBishops;
         this.hasRooks = hasRooks;
+    }
+    public void InitializeGenerator(int kingCount, int queenCount, int pawnCount, int bishopCount, int knightCount, int rookCount)
+    {
+        this.kingCount = kingCount;
+        this.queenCount = queenCount;
+        this.pawnCount = pawnCount;
+        this.bishopCount = bishopCount;
+        this.knightCount = knightCount;
+        this.rookCount = rookCount;
+
+        hasKings = kingCount > 0;
+        hasQueens = queenCount > 0;
+        hasPawns = pawnCount > 0;
+        hasKnights = knightCount > 0;
+        hasBishops = bishopCount > 0;
+        hasRooks = rookCount > 0;
     }
     protected override string getASPCode()
     {
@@ -37,7 +58,7 @@ public class ChessGenerator : CheckeredPathGenerator
             black(king_black;queen_black;pawn_black;rook_black;bishop_black;knight_black).
             #const max_king = 1.
             #const max_queen = 1.
-            #const max_pawn = 8.
+            #const max_pawn = 4.
             #const max_knight = 2.
             #const max_rook = 2.
             #const max_bishop = 2.

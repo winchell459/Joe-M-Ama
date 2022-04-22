@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ChessLevelHandler : ASPLevelHandler
 {
-    [SerializeField] ASPGenerator generator;
+    [SerializeField] ChessGenerator generator;
 
     [SerializeField] MapTileRule mapTileRule;
     [SerializeField] MapKeyTileRule mapKeyTileRule;
@@ -13,10 +13,11 @@ public class ChessLevelHandler : ASPLevelHandler
     [SerializeField] MapKeyPixel mapKeyPixel;
     [SerializeField] MapBoardPiece mapBoardPiece;
     [SerializeField] MapKeyBoardPiece mapKeyBoardPiece;
-
+    [SerializeField] int kingCount = 1, queenCount = 1, pawnCount = 4, bishopCount = 2, knightCount = 2, rookCount = 2;
     private void Start()
     {
         initializeGenerator(generator);
+        generator.InitializeGenerator(kingCount, queenCount, pawnCount, bishopCount, knightCount, rookCount);
         generator.StartGenerator();
     }
 
