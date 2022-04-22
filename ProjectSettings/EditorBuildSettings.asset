@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ASPChess.unity
+    guid: cd975a6b3d966274388f85cbcbbafe50
+  - enabled: 1
+    path: Assets/Scenes/ASPGomoku.unity
+    guid: c33fcff0f8ae5434bac608c9520b5175
   m_configObjects: {}

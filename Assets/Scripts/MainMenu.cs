@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void StartButton()
     {
-        SceneManager.LoadScene("Chess");
+        SceneManager.LoadScene("ASPChess");
     }
     public void SettingsButton()
     {
@@ -21,6 +21,6 @@ public class MainMenu : MonoBehaviour
 
     public void StartGomokuButton()
     {
-        SceneManager.LoadScene("Gomoku");
+        SceneManager.LoadScene("ASPGomoku");
     }
 }
