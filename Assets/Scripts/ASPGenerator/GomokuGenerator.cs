@@ -30,6 +30,7 @@ public class GomokuGenerator : CheckeredPathGenerator
             :- Count = {{piece_start(_,_,black)}}, Count < 5.
 
             playable(XX,YY,Color) :- piece_path(XX,YY), not piece_start(XX,YY,Color2), Color2 != Color, gomoku_pieces(Color), gomoku_pieces(Color2).
+
             winnable_rock(XX,YY,Color) :- piece_start(XX,YY, Color), playable(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
             winnable_rock(XX,YY,Color) :- playable(XX-1,YY,Color), piece_start(XX,YY, Color), playable(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color).
             winnable_rock(XX,YY,Color) :- playable(XX-2,YY,Color), playable(XX-1,YY,Color), piece_start(XX,YY, Color), playable(XX+1,YY,Color), playable(XX+2,YY,Color).
@@ -48,6 +49,20 @@ public class GomokuGenerator : CheckeredPathGenerator
 
             0{{piece_path(XX,YY)}}1 :- tile(XX,YY,{tile_types.filled}).
             :- tile(XX,YY,{tile_types.filled}), not playable(XX,YY,_).
+
+            winnable_square(XX,YY,Color) :- winnable_rock(XX-1,YY,Color), playable(XX,YY, Color),  playable(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color).
+            winnable_square(XX,YY,Color) :- winnable_rock(XX-2,YY,Color), playable(XX-1,YY,Color), playable(XX,YY, Color),  playable(XX+1,YY,Color), playable(XX+2,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            winnable_square(XX,YY,Color) :- playable(XX,YY, Color), winnable_rock(XX+1,YY,Color), playable(XX+2,YY,Color), playable(XX+3,YY,Color), playable(XX+4,YY,Color).
+            
+            :- piece_path(XX,YY), not winnable_square(XX,YY,_).
         ";
 
         return aspCode;

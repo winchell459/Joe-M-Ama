@@ -393,8 +393,8 @@ MonoBehaviour:
   map: {fileID: 0}
   mapKey: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
   runOnAwake: 0
-  boardWidth: 15
-  boardHeight: 15
+  boardWidth: 12
+  boardHeight: 12
   hasKings: 1
   hasQueens: 1
   hasPawns: 1
@@ -718,13 +718,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225697888}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6, y: 21.5, z: 0}
+  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalPosition: {x: 6, y: 19.5, z: -6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 799751795}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
 --- !u!1 &1340413385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1016,12 @@ MonoBehaviour:
   mapKeyPixel: {fileID: 11400000, guid: b6dd73676a676a447a4d790e48266823, type: 2}
   mapBoardPiece: {fileID: 1634144059}
   mapKeyBoardPiece: {fileID: 11400000, guid: 2c295bd4851c16745b55107180e8b49f, type: 2}
+  kingCount: 1
+  queenCount: 1
+  pawnCount: 4
+  bishopCount: 2
+  knightCount: 2
+  rookCount: 2
 --- !u!4 &1748072227
 Transform:
   m_ObjectHideFlags: 0
@@ -1206,8 +1212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoardSquarePrefab: {fileID: 1814700486139677373, guid: 7aa3474047c530347bb85ca96c1ae494, type: 3}
-  boardWidth: 15
-  boardHeight: 15
+  boardWidth: 12
+  boardHeight: 12
   boardSquareSpacing: 1
   SelectedPiece: {fileID: 0}
   GameOver: 0
