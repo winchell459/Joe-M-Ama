@@ -393,8 +393,14 @@ MonoBehaviour:
   map: {fileID: 0}
   mapKey: {fileID: 11400000, guid: abc652150d9e797438691dc493872a42, type: 2}
   runOnAwake: 0
-  boardWidth: 12
-  boardHeight: 12
+  boardWidth: 15
+  boardHeight: 15
+  hasKings: 1
+  hasQueens: 1
+  hasPawns: 1
+  hasBishops: 1
+  hasKnights: 1
+  hasRooks: 1
 --- !u!4 &595343208
 Transform:
   m_ObjectHideFlags: 0
@@ -1109,8 +1115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoardSquarePrefab: {fileID: 1814700486139677373, guid: 7aa3474047c530347bb85ca96c1ae494, type: 3}
-  boardWidth: 12
-  boardHeight: 12
+  boardWidth: 15
+  boardHeight: 15
   boardSquareSpacing: 1
   SelectedPiece: {fileID: 0}
   GameOver: 0
