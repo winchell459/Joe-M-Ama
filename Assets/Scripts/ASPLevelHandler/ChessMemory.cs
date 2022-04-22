@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChessMemory : MonoBehaviour
+public class ChessMemory : ASPMemory
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override string generateMemory()
     {
-        
-    }
+        string aspCode = $@"";
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        return aspCode;
     }
 }
