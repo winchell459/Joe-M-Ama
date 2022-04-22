@@ -6,6 +6,7 @@ public class ASPGomokuBoard : GomokuBoard
 {
     protected override void setupBoardPieces()
     {
+        base.setupBoardPieces();
         transform.position = new Vector2(boardWidth / 2, boardHeight / 2);
         for (int i = 0; i < boardWidth; i+= 1)
         {

@@ -425,7 +425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &799751794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,8 +665,8 @@ MonoBehaviour:
   SelectedPiece: {fileID: 0}
   GameOver: 0
   winningColor: 0
-  rockWhitePrefab: {fileID: 0}
-  rockBlackPrefab: {fileID: 0}
+  rockWhitePrefab: {fileID: 5409039887369566088, guid: ff183569ad7aa03449df5442d2dea71f, type: 3}
+  rockBlackPrefab: {fileID: 1531404582790314202, guid: 454912b8aa215bb4a920e75d94cab3fa, type: 3}
 --- !u!4 &1340413387
 Transform:
   m_ObjectHideFlags: 0
@@ -900,7 +900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1748072226
 MonoBehaviour:
   m_ObjectHideFlags: 0
